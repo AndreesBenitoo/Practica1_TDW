@@ -8,11 +8,35 @@
     <body>
         <!--Cabezera principal-->
         <header class="banner">
-            <div class="overlay"></div>
-            <div class="content">
+            <div class="banner-overlay"></div>
+            <div class="banner-content">
                 <h1>Anales de la Ciencia</h1>
             </div>
         </header>
+
+
+        <!-- Log-in -->
+        <div class="login-border">
+            <div class="login-container">
+                
+                <!-- Login form-->
+                <div id="login-form">
+                    <label for="username">Usuario:</label>
+                    <input type="text" id="username">
+                    <label for="password">Contraseña:</label>
+                    <input type="text" id="password">
+                    <button id="btnLogin">Login</button>
+                </div>
+
+                <!-- Current User && Logout button-->
+                <div class="user-info" style="display:none;">
+                    <span id="current-user"></span>
+                </div>
+                <button id="btnLogout" style="display:none;">Logout</button>
+            </div>
+        </div>
+
+
         <script src="main.js"></script>
     </body>
 </html>
