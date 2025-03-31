@@ -8,7 +8,7 @@ body {
 .banner{
     position:relative;
     height: 20vh; /* en vez de pixeles, se usa vh para que sea responsive */
-    background: url('./img/banner-principal.png')
+    background: url('./img/Other/banner-principal.png')
         center center/cover no-repeat;
     border-bottom:1px solid #ffa500;
     display: flex;
