@@ -1,4 +1,4 @@
-let productos = [
+export let productos = [
     {
         id: 1,
         nombre: 'SGML',
@@ -60,7 +60,7 @@ let productos = [
         entidades: [] // Netscape no está en tus entidades
     }
 ];
-let personas = [
+export let personas = [
     {
         id: 1,
         nombre: 'Tim Berners-Lee',
@@ -94,7 +94,7 @@ let personas = [
         wiki: 'https://en.wikipedia.org/wiki/Brendan_Eich',
     }
 ];
-let entidades = [
+export let entidades = [
     {
         id: 1,
         nombre: 'W3C',
@@ -123,6 +123,3 @@ let entidades = [
         personas: [], // Ninguno de los listados
     },
 ];
-
-let currentUser = null;
-
