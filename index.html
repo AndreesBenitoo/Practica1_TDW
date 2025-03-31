@@ -30,6 +30,7 @@
 
                 <!-- Current User && Logout button-->
                 <div class="user-info" style="display:none;">
+                    <span>Usuario: </span>
                     <span id="current-user"></span>
                 </div>
                 <button id="btnLogout" style="display:none;">Logout</button>
@@ -37,6 +38,33 @@
         </div>
 
 
+        <!-- seccion principal -->
+        <main class="columns-container">
+            <section id="products-section" class="column">
+                <h2>Productos</h2>
+                <div id="products-list" class="item-list">
+                    <!-- Aquí se inyectarán los items (imágenes + nombres) vía JS -->
+                </div>
+
+                <button id="btnAddProduct" class="btn-add" style="display:none;">Agregar Producto</button>
+            </section>
+
+            <section id="Inventor-section" class="column">
+                <h2>Inventores</h2>
+                <div id="Inventor-list" class="item-list">
+                    <!-- Idem anterior -->
+                </div>
+                <button id="btnAddInventor" class="btn-add" style="display:none;">Agregar Inventor</button>
+            </section>
+
+            <section id="Entities-section" class="column">
+                <h2>Entidades</h2>
+                <div id="Entities-list" class="item-list">
+                    <!-- Idem anterior -->
+                </div>
+                <button id="btnAddEntity" class="btn-add" style="display:none;">Agregar Entidad</button>
+            </section>
+        </main>
         <script src="main.js"></script>
     </body>
 </html>

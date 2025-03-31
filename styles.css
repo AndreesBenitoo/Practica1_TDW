@@ -103,3 +103,24 @@ lo que mejora la legibilidad y la usabilidad en dispositivos móviles. */
     }
 }
 
+/* ---- SECCIONES PRINCIPALES ---- */
+.columns-container{
+    display: flex;
+    justify-content: space-around;
+    margin: 1rem 0;
+    padding: 0 20px;
+}
+
+
+.column{
+    width: 30%;
+    min-width: 200px;
+    text-align: center;
+}
+
+.column h2{
+    margin-bottom: 1rem;
+    border-bottom: 1px solid #ffa500;
+    padding-bottom: 0.5rem;
+    font-size: 1.3rem;
+}
