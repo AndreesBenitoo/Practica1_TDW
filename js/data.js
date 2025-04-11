@@ -4,7 +4,7 @@ export let productos = [
         nombre: 'SGML',
         fecha_creacion: '1986',
         fecha_defuncion: '1994',
-        imagen: './img/Product/SGML.svg',
+        imagen: '/img/Product/SGML.svg',
         wiki: 'https://en.wikipedia.org/wiki/Standard_Generalized_Markup_Language',
         personas: [], // Ninguna persona listada participó directamente
         entidades: [{id: 3}] // ISO
@@ -14,7 +14,7 @@ export let productos = [
         nombre: 'XML',
         fecha_creacion: '1998',
         fecha_defuncion: '',
-        imagen: './img/Product/XML.png',
+        imagen: '/img/Product/XML.png',
         wiki: 'https://en.wikipedia.org/wiki/XML',
         personas: [], // No fue creado directamente por Tim
         entidades: [{id: 1}] // W3C
@@ -24,7 +24,7 @@ export let productos = [
         nombre: 'HTML',
         fecha_creacion: '1993',
         fecha_defuncion: '',
-        imagen: './img/Product/HTML.png',
+        imagen: '/img/Product/HTML.png',
         wiki: 'https://en.wikipedia.org/wiki/HTML',
         personas: [{id: 1}], // Tim Berners-Lee
         entidades: [{id: 2}, {id: 1}] // CERN (desarrollo), W3C (posterior estandarización)
@@ -34,7 +34,7 @@ export let productos = [
         nombre: 'HTTP',
         fecha_creacion: '1991',
         fecha_defuncion: '',
-        imagen: './img/Product/HTTP.png',
+        imagen: '/img/Product/HTTP.png',
         wiki: 'https://en.wikipedia.org/wiki/HTTP',
         personas: [{id: 1}], // Tim Berners-Lee
         entidades: [{id: 2}, {id: 1}] // CERN, W3C
@@ -44,7 +44,7 @@ export let productos = [
         nombre: 'CSS',
         fecha_creacion: '1996',
         fecha_defuncion: '',
-        imagen: './img/Product/CSS.png',
+        imagen: '/img/Product/CSS.png',
         wiki: 'https://en.wikipedia.org/wiki/CSS',
         personas: [{id: 3}], // Håkon Wium Lie
         entidades: [{id: 1}] // W3C
@@ -54,7 +54,7 @@ export let productos = [
         nombre: 'JavaScript',
         fecha_creacion: '1995',
         fecha_defuncion: '',
-        imagen: './img/Product/JavaScript.png',
+        imagen: '/img/Product/JavaScript.png',
         wiki: 'https://en.wikipedia.org/wiki/JavaScript',
         personas: [{id: 4}], // Brendan Eich
         entidades: [] // Netscape no está en tus entidades
@@ -66,7 +66,7 @@ export let personas = [
         nombre: 'Tim Berners-Lee',
         fecha_nacimiento: '1955',
         fecha_defuncion: '',
-        imagen: './img/Inventor/Tim_Berners-Lee.jpg',
+        imagen: '/img/Inventor/Tim_Berners-Lee.jpg',
         wiki: 'https://en.wikipedia.org/wiki/Tim_Berners-Lee',
     },
     {
@@ -74,7 +74,7 @@ export let personas = [
         nombre: 'Vannevar Bush',
         fecha_nacimiento: '1890',
         fecha_defuncion: '1974',
-        imagen: './img/Inventor/Vannevar_Bush.jpg',
+        imagen: '/img/Inventor/Vannevar_Bush.jpg',
         wiki: 'https://en.wikipedia.org/wiki/Vannevar_Bush',
     },
     {
@@ -82,7 +82,7 @@ export let personas = [
         nombre: 'Håkon Wium Lie',
         fecha_nacimiento: '1965',
         fecha_defuncion: '',
-        imagen: './img/Inventor/Hakon_Wium_Lie.jpg',
+        imagen: '/img/Inventor/Håkon-Wium-Lie.jpg',
         wiki: 'https://en.wikipedia.org/wiki/H%C3%A5kon_Wium_Lie',
     },
     {
@@ -90,7 +90,7 @@ export let personas = [
         nombre: 'Brendan Eich',
         fecha_nacimiento: '1961',
         fecha_defuncion: '',
-        imagen: './img/Inventor/Brendan_Eich.jpg',
+        imagen: '/img/Inventor/Brendan_Eich.jpg',
         wiki: 'https://en.wikipedia.org/wiki/Brendan_Eich',
     }
 ];
@@ -100,7 +100,7 @@ export let entidades = [
         nombre: 'W3C',
         fecha_creacion: '1994',
         fecha_defuncion: '',
-        imagen: './img/Entity/W3C.svg',
+        imagen: '/img/Entity/W3C.svg',
         wiki: 'https://en.wikipedia.org/wiki/World_Wide_Web_Consortium',
         personas: [{id: 1}], // Tim Berners-Lee fundó W3C
     },
@@ -109,7 +109,7 @@ export let entidades = [
         nombre: 'CERN',
         fecha_creacion: '1954',
         fecha_defuncion: '',
-        imagen: './img/Entity/CERN.png',
+        imagen: '/img/Entity/CERN.png',
         wiki: 'https://es.wikipedia.org/wiki/CERN',
         personas: [{id: 1}], // Tim Berners-Lee trabajó allí cuando inventó la Web
     },
@@ -118,7 +118,7 @@ export let entidades = [
         nombre: 'ISO',
         fecha_creacion: '1946',
         fecha_defuncion: '',
-        imagen: './img/Entity/ISO.svg',
+        imagen: '/img/Entity/ISO.svg',
         wiki: 'https://en.wikipedia.org/wiki/International_Organization_for_Standardization',
         personas: [], // Ninguno de los listados
     },

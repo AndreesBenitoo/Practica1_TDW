@@ -1,6 +1,7 @@
 console.log('App.js cargado');
 
 import { personas, entidades, productos } from './data.js';
+const botonprueba = document.getElementById("prueba");
 
 console.log('Importación exitosa');
 console.log('Productos:', productos);
@@ -40,19 +41,19 @@ function initialIjection(){
         addInventor(person.id,person.nombre,person.fecha_nacimiento,person.fecha_defuncion,person.imagen,person.wiki);
     });
     entidades.forEach(entity => {
-        addInventor(entity.id,entity.nombre,entity.fecha_creacion,entity.fecha_defuncion,entity.imagen,entity.wiki,entity.personas);
+        addEntity(entity.id,entity.nombre,entity.fecha_creacion,entity.fecha_defuncion,entity.imagen,entity.wiki,entity.personas);
     });
 }
 
 //Add product with product parameter given
 function addProduct(id, nombre, fecha_creacion, fecha_defuncion, imagen, wiki, personas, entidades){
     //Select father element 
-    let products = document.getElementById('products-section');
+    let products = document.getElementById('products-list');
     //creation of new div
     let div = document.createElement('div');
-    div.id = 'producto ' + id;
+    div.id = 'product-' + id;
     div.className = nombre;
-    div.innerHTML = '<img src= "'+imagen+'" alt="Imagen '+nombre+'"><a href="./html/products/'+URLify(nombre)+".html"+'">'+nombre+'</a>'; //Lo del enlace lo he puesto temporal
+    div.innerHTML = '<div id = "img-'+nombre+'"><img src= "'+imagen+'" alt="Imagen '+nombre+'"></div><a href="./html/entities/'+URLify(nombre)+".html"+'">'+nombre+'</a>'; //Lo del enlace lo he puesto temporal
     div.style = "column-img";
     //Append Child
     products.appendChild(div);
@@ -61,12 +62,12 @@ function addProduct(id, nombre, fecha_creacion, fecha_defuncion, imagen, wiki, p
 //Add person with Inventor parameter given
 function addInventor(id, nombre, fecha_nacimiento, fecha_defuncion, imagen, wiki) {
     //Select father element 
-    let people = document.getElementById('Inventor-section');
+    let people = document.getElementById('Inventor-list');
     //creation of new div
     let div = document.createElement('div');
-    div.id = 'inventor ' + id;
+    div.id = 'person-' + id;
     div.className = nombre;
-    div.innerHTML = '<img src= "'+imagen+'" alt="Imagen '+nombre+'"><a href="./html/inventors/'+URLify(nombre)+".html"+'">'+nombre+'</a>'; //Lo del enlace lo he puesto temporal
+    div.innerHTML = '<div id = "img-'+nombre+'"><img src= "'+imagen+'" alt="Imagen '+nombre+'"></div><a href="./html/entities/'+URLify(nombre)+".html"+'">'+nombre+'</a>'; //Lo del enlace lo he puesto temporal
     div.style = "column-img";
     //Append Child
     people.appendChild(div);
@@ -75,17 +76,18 @@ function addInventor(id, nombre, fecha_nacimiento, fecha_defuncion, imagen, wiki
 //Add entity with parameter given
 function addEntity(id, nombre, fecha_creacion, fecha_defuncion, imagen, wiki, personas) {
     //Select father element 
-    let entities = document.getElementById('Entities-section');
+    let entities = document.getElementById('Entities-list');
     //creation of new div
     let div = document.createElement('div');
-    div.id = 'entidad ' + id;
+    div.id = 'entity-' + id;
     div.className = nombre;
-    div.innerHTML = '<img src= "'+imagen+'" alt="Imagen '+nombre+'"><a href="./html/entities/'+URLify(nombre)+".html"+'">'+nombre+'</a>'; //Lo del enlace lo he puesto temporal
-    div.style = "column-img";
+    div.innerHTML = '<div id = "img-'+nombre+'"><img src= "'+imagen+'" alt="Imagen '+nombre+'" ></div><a href="./html/entities/'+URLify(nombre)+".html"+'">'+nombre+'</a>'; //Lo del enlace lo he puesto temporal
     //Append Child
     entities.appendChild(div);
 }
 
 function URLify(string) {
-    return string.trim().replace(/\s/g, '%20');
+    return string.trim().replace(/\s/g, '%20'); 
   }
+
+window.addEventListener('load',() => {initialIjection()})

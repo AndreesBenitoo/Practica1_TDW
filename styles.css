@@ -125,8 +125,8 @@ lo que mejora la legibilidad y la usabilidad en dispositivos móviles. */
     font-size: 1.3rem;
 }
 
-.column-img{
-    max-height: 20px;
+img{
+    height: 80px;
     width: auto;
-
+    overflow: hidden;
 }
