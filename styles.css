@@ -124,3 +124,9 @@ lo que mejora la legibilidad y la usabilidad en dispositivos móviles. */
     padding-bottom: 0.5rem;
     font-size: 1.3rem;
 }
+
+.column-img{
+    max-height: 20px;
+    width: auto;
+
+}
