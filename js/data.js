@@ -123,3 +123,9 @@ export let entidades = [
         personas: [], // Ninguno de los listados
     },
 ];
+
+export let users = [
+    {username: 'x', password: 'x'},
+    {username: 'y', password: 'y'},
+    {username: 'z', password: 'z'}
+]
