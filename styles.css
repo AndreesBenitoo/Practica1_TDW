@@ -1,39 +1,42 @@
+/* ====================
+   ESTILOS GENERALES
+   ==================== */
 body {
     font-family: Arial, sans-serif;
     background-color: #000;
     color: #ffa500;
 }
 
-/* ---- BANNER ---- */
-.banner{
-    position:relative;
-    height: 20vh; /* en vez de pixeles, se usa vh para que sea responsive */
-    background: url('./img/Other/banner-principal.png')
-        center center/cover no-repeat;
-    border-bottom:1px solid #ffa500;
+/* ====================
+   BANNER PRINCIPAL
+   ==================== */
+.banner {
+    position: relative;
+    height: 20vh;
+    background: url('./img/Other/banner-principal.png') center center/cover no-repeat;
+    border-bottom: 1px solid #ffa500;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-.banner-overlay{
+.banner-overlay {
     position: absolute;
-    top:0;
-    left:0;
-    right:0;
-    bottom:0;
-    background-color: rbga(0,0,0,0,6);
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,0.6);
 }
 
-.banner-content{
+.banner-content {
     position: relative;
     z-index: 2;
     text-align: center;
     padding: 0 20px;
-    
 }
 
-.banner-content h1{
+.banner-content h1 {
     font-size: 2rem;
     margin-bottom: 0.5rem;
     color: #ffa500;
@@ -42,83 +45,168 @@ body {
     border-radius: 8px;
 }
 
-/* ---- LOGIN ---- */
-.login-border {
-    background-color: #000;
-    padding: 1rem;
-    border-bottom: 1px solid #ffa500;
+/* ====================
+   BOTÓN LOGIN BANNER
+   ==================== */
+.banner-login {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    z-index: 3;
 }
 
-.login-container {
-    width: 90%;
-    max-width: 400px;
-    margin: 20px auto;
-    padding: 20px;
-    background-color: rgba(0, 0, 0, 0.8);
+#btnShowLogin {
+    background-color: transparent;
+    border: 1px solid #ffa500;
+    color: #ffa500;
+    padding: 8px 16px;
+    cursor: pointer;
     border-radius: 5px;
+    font-size: 0.9em;
+    transition: all 0.3s ease;
+}
+
+#btnShowLogin:hover {
+    background-color: rgba(255, 165, 0, 0.2);
+}
+
+/* ====================
+   FORMULARIO LOGIN
+   ==================== */
+.login-border {
+    padding: 20px;
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 1rem;
 }
 
-.login-container label{
-    font-size: 0.9rem;
-    margin-right: 0.3rem;
-    color:#ffa500;
-}
-
-.login-container input {
+.login-container {
     width: 100%;
-    padding: 8px;
-    margin-bottom: 10px;
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+.login-card {
+    background: linear-gradient(90deg, #1a1a1a, #2a2a2a);
     border: 1px solid #ffa500;
-    background-color: rgba(0, 0, 0, 0.6);
+    border-radius: 10px;
+    padding: 30px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.login-card h2 {
+    color: #ffa500;
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 1.5em;
+}
+
+/* Campos del formulario */
+.input-group {
+    margin-bottom: 20px;
+}
+
+.input-group label {
+    display: block;
+    color: #ffa500;
+    margin-bottom: 8px;
+    font-size: 0.9em;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.2);
+    border: 1px solid #ffa500;
+    border-radius: 5px;
+    color: #ffa500;
+    font-size: 1em;
+}
+
+.input-group input:focus {
+    outline: none;
+    border-color: #ffa500;
+    box-shadow: 0 0 5px rgba(255, 165, 0, 0.3);
+}
+
+/* Botón circular con flecha */
+.login-button {
+    width: 50px;
+    height: 50px;
+    background-color: #ffa500;
+    border: none;
+    border-radius: 50%;
+    color: #000;
+    font-size: 1.5em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 20px auto 0;
+    padding: 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.login-button:hover {
+    transform: scale(1.1);
+    background-color: #ff8c00;
+}
+
+.arrow-icon {
+    display: inline-block;
+    transition: transform 0.3s ease;
+}
+
+.login-button:hover .arrow-icon {
+    transform: translateX(3px);
+}
+
+/* Información de usuario */
+.user-info {
+    background: linear-gradient(90deg, #1a1a1a, #2a2a2a);
+    border: 1px solid #ffa500;
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
     color: #ffa500;
 }
 
-#btnLogin, #btnLogout {
-    background-color: #ffa500;
-    border:none;
-    padding:0.3rem 0.6rem;
-    cursor:pointer;
-    color: #000;
-    font-weight: bold;
+#btnLogout {
+    margin-top: 10px;
+    padding: 8px 16px;
+    background-color: transparent;
+    border: 1px solid #ffa500;
+    border-radius: 5px;
+    color: #ffa500;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
 }
 
-#btnLogin:hover, #btnLogout:hover {
-    background-color: #ffa500;
+#btnLogout:hover {
+    background-color: rgba(255, 165, 0, 0.2);
 }
 
-/* Media Queries 
-Esto significa que cuando la pantalla sea más pequeña que 600px, 
-el título se hará más pequeño y el contenedor de login ocupará más espacio, 
-lo que mejora la legibilidad y la usabilidad en dispositivos móviles. */
-@media (max-width: 600px) {
-    .banner-content h1 {
-        font-size: 1.2rem;
-    }
-    .login-container {
-        width: 95%;
-    }
-}
-
-/* ---- SECCIONES PRINCIPALES ---- */
-.columns-container{
+/* ====================
+   SECCIONES PRINCIPALES
+   ==================== */
+.columns-container {
     display: flex;
     justify-content: space-around;
     margin: 1rem 0;
     padding: 0 20px;
 }
 
-
-.column{
+.column {
     width: 30%;
     min-width: 200px;
     text-align: center;
 }
 
-.column h2{
+.column h2 {
     margin-bottom: 1rem;
     border-bottom: 1px solid #ffa500;
     padding-bottom: 0.5rem;
@@ -131,66 +219,28 @@ img{
     overflow: hidden;
 }
 
-
-/* ---- COLUMNA DE PRODUCTOS ---- */
-.product-item{
-    border: 1px solid #ffa500;
-    padding: 1rem;
-    margin-bottom: 1rem;
-    background-color: rgba(0, 0, 0, 0.6);
-    border-radius: 5px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-    transition: transform 0.3s ease;
-}
-
-.product-item img {
-    float: left;
-    margin-right: 1rem;
-    width: 120px;
-    height: 120px;
-    object-fit: cover;
-}
-
-.product-item h3 {
-    font-family: 'Arial', sans-serif;
-    font-size: 1.2rem;
-    color: #ffa500;
-    margin-bottom: 0.5rem;
-}
-
-.product-item p {
-    font-family: 'Arial', sans-serif;
-    font-size: 1rem;
-    line-height: 1.4;
-    color: #ffffff;
-}
-
-.product-item:after {
-    content: "";
-    display: table;
-    clear: both;
-}
-
-
+/* ====================
+   TARJETAS DE ITEMS
+   ==================== */
 .item-list {
     display: flex;
     flex-direction: column;
-    gap: 20px; /* espacio entre las tarjetas */
-    padding:20px; /* espacio alrededor de las tarjetas */
+    gap: 20px;
+    padding: 20px;
 }
 
 .item-card {
     position: relative;
-    display: flex; 
+    display: flex;
     background: linear-gradient(90deg, #1a1a1a, #2a2a2a);
-    border-radius: 10px; 
-    overflow: hidden; /* para que el contenido no se desborde */
-    height: 200px; /* altura de las tarjetas */
-    transition: transform 0.3s ease; /* efecto de transformación suave */
+    border-radius: 10px;
+    overflow: hidden;
+    height: 200px;
+    transition: transform 0.3s ease;
 }
 
 .item-card:hover {
-    transform: scale(1.02);/* Efecto de zoom al pasar el mouse */
+    transform: scale(1.02);
 }
 
 .item-info {
@@ -234,7 +284,7 @@ img{
     width: 40%;
     height: 100%;
     object-fit: contain;
-    padding: 10px;
+    padding: 20px;
     background-color: rgba(0, 0, 0, 0.2);
     display: flex;
     align-items: center;
@@ -247,7 +297,9 @@ img{
     max-height: 100%;
 }
 
-/* Responsive design */
+/* ====================
+   RESPONSIVE DESIGN
+   ==================== */
 @media (max-width: 768px) {
     .item-card {
         flex-direction: column;
@@ -261,5 +313,15 @@ img{
     
     .item-info {
         padding: 15px;
+    }
+}
+
+@media (max-width: 600px) {
+    .banner-content h1 {
+        font-size: 1.2rem;
+    }
+    .banner-login {
+        top: 10px;
+        right: 10px;
     }
 }

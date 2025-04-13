@@ -17,31 +17,39 @@
             <div class="banner-content">
                 <h1>Anales de la Ciencia</h1>
             </div>
+            <!-- Botón de login en el banner -->
+            <div class="banner-login">
+                <button id="btnShowLogin">Login</button>
+            </div>
         </header>
 
-
         <!-- Log-in -->
-        <div class="login-border">
+        <div class="login-border" style="display:none;">
             <div class="login-container">
-                
                 <!-- Login form-->
-                <div id="login-form">
-                    <label for="username">Usuario:</label>
-                    <input type="text" id="username">
-                    <label for="password">Contraseña:</label>
-                    <input type="password" id="password">
-                    <button id="btnLogin">Login</button>
+                <div id="login-form" class="login-card">
+                    <h2>Iniciar sesión</h2>
+                    <div class="input-group">
+                        <label for="username">Usuario</label>
+                        <input type="text" id="username">
+                    </div>
+                    <div class="input-group">
+                        <label for="password">Contraseña</label>
+                        <input type="password" id="password">
+                    </div>
+                    <button id="btnLogin" class="login-button">
+                        <span class="arrow-icon">→</span>
+                    </button>
                 </div>
 
                 <!-- Current User && Logout button-->
                 <div class="user-info" style="display:none;">
                     <span>Usuario: </span>
                     <span id="current-user"></span>
+                    <button id="btnLogout">Cerrar sesión</button>
                 </div>
-                <button id="btnLogout" style="display:none;">Logout</button>
             </div>
         </div>
-
 
         <!-- seccion principal -->
         <main class="columns-container">

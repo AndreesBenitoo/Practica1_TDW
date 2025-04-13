@@ -1,6 +1,8 @@
 import {users} from './data.js';
 
 //Elementos del DOM
+const loginBorder = document.querySelector('.login-border');
+const btnShowLogin = document.getElementById('btnShowLogin');
 const loginForm = document.getElementById('login-form');
 const userInfo = document.querySelector('.user-info');
 const currentUserSpan = document.getElementById('current-user');
@@ -10,7 +12,11 @@ const btnAddProduct = document.getElementById('btnAddProduct');
 const btnAddInventor = document.getElementById('btnAddInventor');
 const btnAddEntity = document.getElementById('btnAddEntity');
 
-
+// Toggle de la sección de login
+btnShowLogin.addEventListener('click', () => {
+    const isVisible = loginBorder.style.display === 'block';
+    loginBorder.style.display = isVisible ? 'none' : 'block';
+});
 
 function updateUI(isLoggedIn, username = ''){
     if (isLoggedIn){
@@ -18,6 +24,8 @@ function updateUI(isLoggedIn, username = ''){
         userInfo.style.display = 'block';
         btnLogout.style.display = 'block';
         currentUserSpan.textContent = username;   
+        btnShowLogin.style.display = 'none';
+        loginBorder.style.display = 'block';
 
         //Mostrar botones de agregar
         btnAddProduct.style.display = 'block';
@@ -28,6 +36,8 @@ function updateUI(isLoggedIn, username = ''){
         userInfo.style.display = 'none';
         btnLogout.style.display = 'none';
         currentUserSpan.textContent = '';
+        btnShowLogin.style.display = 'block';
+        loginBorder.style.display = 'none';
 
         //Ocultar botones de agregar    
         btnAddProduct.style.display = 'none';   
