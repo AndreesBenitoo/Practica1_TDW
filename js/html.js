@@ -1,22 +1,27 @@
-import { personas, entidades, productos } from '../js/data.js';
+import { personas, entidades, productos } from '/js/data.js';
 
-const types = {"product" : productos,"person" : personas,"entity" : entidades}
+const types = {"product" : productos, "person" : personas, "entity" : entidades}
 
 window.addEventListener('load',() => {injectContent()})
 
-function setWiki(){
+function setWiki(wiki){
     const frame = document.getElementById("iframe-wiki");
-    frame.setAttribute("src", "https://en.wikipedia.org/wiki/JavaScript")
+    frame.setAttribute("src", wiki);
 }
 
 function injectContent(){
-    const idhtml = document.head.querySelector("[name~=id][content]").content;
-    const type =  String(idhtml).split('-')[0];
-    const id =  String(Number(idhtml.split('-')[1])-1);
+    //Get URL params
+    var url = new URL(window.location.href);
+    let type;
+    let id;
+    //Set the last param (it will only contain 1, but it is written like this so we can add more params in the future)
+    for (const [key, value] of url.searchParams.entries()) {
+        type = `${key}`;
+        id = String(Number(`${value}`)-1);
+    }
     //Add content from db
     let node = types[type][id];
-    const content = document.getElementById(type+'-content');
-    let i = 0
+    const content = document.getElementById('element-content');
     //Iterate dictionary of db in order to add them
     for (const [key, value] of Object.entries(node)) {
         let ikey = `${key}`;
@@ -34,8 +39,8 @@ function injectContent(){
             let paragraph = document.createElement('p');
             let str = ikey.charAt(0).toUpperCase()+ikey.substring(1) + ' :';
             ikey = (ikey === 'personas' ? 'person' : 'entity');
-            const ntype= types[ikey]
-            console.log(ntype)
+            const ntype= types[ikey];
+            console.log(ntype);
             //Iterate dictionary of dictionary in value in order to display them
             for (const [nkey,nvalue] of Object.entries(value)) {
                 str += ' '+ntype[nvalue['id']-1].nombre + ',';
@@ -48,5 +53,9 @@ function injectContent(){
     let imagen = document.createElement('div');
     imagen.innerHTML = '<img src="'+types[type][id].imagen+'" width="25%" height="auto" alt="img">'
     content.appendChild(imagen);
-    setWiki();
+    setWiki(types[type][id].wiki);
+}
+
+function setParameters(){
+
 }

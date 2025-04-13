@@ -53,7 +53,7 @@ function addProduct(id, nombre, fecha_creacion, fecha_defuncion, imagen, wiki, p
     let div = document.createElement('div');
     div.id = 'product-' + id;
     div.className = nombre;
-    div.innerHTML = '<div id = "img-'+nombre+'"><img src= "'+imagen+'" alt="Imagen '+nombre+'"></div><a href="./html/entities/'+URLify(nombre)+".html"+'">'+nombre+'</a>'; //Lo del enlace lo he puesto temporal
+    div.innerHTML = '<div id = "img-'+nombre+'"><img src= "'+imagen+'" alt="Imagen '+nombre+'"></div><a href="./html/entities/'+URLify(nombre)+'.html/?product='+id+'">'+nombre+'</a>'; //Lo del enlace lo he puesto temporal
     div.style = "column-img";
     //Append Child
     products.appendChild(div);
@@ -67,7 +67,8 @@ function addInventor(id, nombre, fecha_nacimiento, fecha_defuncion, imagen, wiki
     let div = document.createElement('div');
     div.id = 'person-' + id;
     div.className = nombre;
-    div.innerHTML = '<div id = "img-'+nombre+'"><img src= "'+imagen+'" alt="Imagen '+nombre+'"></div><a href="./html/entities/'+URLify(nombre)+".html"+'">'+nombre+'</a>'; //Lo del enlace lo he puesto temporal
+    //div.innerHTML = '<div id = "img-'+nombre+'"><img src= "'+imagen+'" alt="Imagen '+nombre+'"></div><a href="./html/entities/'+URLify(nombre)+'.html/?person='+id+'">'+nombre+'</a>'; //Lo del enlace lo he puesto temporal
+    div.innerHTML = '<div id = "img-'+nombre+'"><img src= "'+imagen+'" alt="Imagen '+nombre+'"></div><a href="/html/model.html?person='+id+'">'+nombre+'</a>'; //Lo del enlace lo he puesto temporal
     div.style = "column-img";
     //Append Child
     people.appendChild(div);
@@ -81,7 +82,7 @@ function addEntity(id, nombre, fecha_creacion, fecha_defuncion, imagen, wiki, pe
     let div = document.createElement('div');
     div.id = 'entity-' + id;
     div.className = nombre;
-    div.innerHTML = '<div id = "img-'+nombre+'"><img src= "'+imagen+'" alt="Imagen '+nombre+'" ></div><a href="./html/entities/'+URLify(nombre)+".html"+'">'+nombre+'</a>'; //Lo del enlace lo he puesto temporal
+    div.innerHTML = '<div id = "img-'+nombre+'"><img src= "'+imagen+'" alt="Imagen '+nombre+'" ></div><a href="./html/entities/'+URLify(nombre)+'.html/?entity='+id+'">'+nombre+'</a>'; //Lo del enlace lo he puesto temporal
     //Append Child
     entities.appendChild(div);
 }
