@@ -4,11 +4,14 @@ const types = {"product" : productos, "person" : personas, "entity" : entidades}
 
 window.addEventListener('load',() => {injectContent()})
 
+
+//Sets the iframe href to the wiki in the db (data.js)
 function setWiki(wiki){
     const frame = document.getElementById("iframe-wiki");
     frame.setAttribute("src", wiki);
 }
 
+//Injects the content of the page based on the data.js database
 function injectContent(){
     //Get URL params
     var url = new URL(window.location.href);
@@ -54,8 +57,4 @@ function injectContent(){
     imagen.innerHTML = '<img src="'+types[type][id].imagen+'" width="25%" height="auto" alt="img">'
     content.appendChild(imagen);
     setWiki(types[type][id].wiki);
-}
-
-function setParameters(){
-
 }

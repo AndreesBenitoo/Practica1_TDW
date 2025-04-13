@@ -79,10 +79,10 @@ export let personas = [
     },
     {
         id: 3,
-        nombre: 'Håkon Wium Lie',
+        nombre: 'Hakon Wium Lie',
         fecha_nacimiento: '1965',
         fecha_defuncion: '',
-        imagen: '/img/Inventor/Håkon-Wium-Lie.jpg',
+        imagen: '/img/Inventor/Hakon-Wium-Lie.jpg',
         wiki: 'https://en.wikipedia.org/wiki/H%C3%A5kon_Wium_Lie',
     },
     {
