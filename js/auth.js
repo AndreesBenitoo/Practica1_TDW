@@ -24,7 +24,8 @@ function updateUI(isLoggedIn, username = ''){
         userInfo.style.display = 'block';
         btnLogout.style.display = 'block';
         currentUserSpan.textContent = username;   
-        btnShowLogin.style.display = 'none';
+        btnShowLogin.style.display = 'block';
+        btnShowLogin.textContent = 'Usuario: ' +username;
         loginBorder.style.display = 'block';
 
         //Mostrar botones de agregar
@@ -37,7 +38,7 @@ function updateUI(isLoggedIn, username = ''){
         btnLogout.style.display = 'none';
         currentUserSpan.textContent = '';
         btnShowLogin.style.display = 'block';
-        loginBorder.style.display = 'none';
+        btnShowLogin.textContent = 'Login';
 
         //Ocultar botones de agregar    
         btnAddProduct.style.display = 'none';   
@@ -73,3 +74,4 @@ btnLogout.addEventListener('click', () => {
 
 //Inicializar UI
 updateUI(false);
+loginBorder.style.display = 'none';
