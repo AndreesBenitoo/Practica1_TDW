@@ -25,13 +25,18 @@ function injectContent(){
     //Add content from db
     let node = types[type][id];
     const content = document.getElementById('element-content');
+    const elementName = document.getElementById('element-name');
+    
+    // Set the element name
+    elementName.textContent = node.nombre || '';
+
     //Iterate dictionary of db in order to add them
     for (const [key, value] of Object.entries(node)) {
         let ikey = `${key}`;
         let ivalue = value;
         /*Check if it is not image or id, if it has a value defined (fechas get to be displayed withput the need of any value)
         and check if it is a string, then create paragraphs and inject them*/
-        if ((ikey !== 'imagen' && ikey !== 'id') && (ivalue !== "" || (ivalue === "" && ikey.includes('fecha'))) && typeof value === 'string') {
+        if ((ikey !== 'imagen' && ikey !== 'id' && ikey !== 'nombre' && ikey !== 'wiki') && (ivalue !== "" || (ivalue === "" && ikey.includes('fecha'))) && typeof value === 'string') {
             let paragraph = document.createElement('p');
             ikey = ikey.charAt(0).toUpperCase()+ikey.substring(1);
             paragraph.textContent = ikey +' : '+ ivalue;
@@ -43,7 +48,6 @@ function injectContent(){
             let str = ikey.charAt(0).toUpperCase()+ikey.substring(1) + ' :';
             ikey = (ikey === 'personas' ? 'person' : 'entity');
             const ntype= types[ikey];
-            console.log(ntype);
             //Iterate dictionary of dictionary in value in order to display them
             for (const [nkey,nvalue] of Object.entries(value)) {
                 str += ' '+ntype[nvalue['id']-1].nombre + ',';
@@ -53,8 +57,10 @@ function injectContent(){
             content.appendChild(paragraph);
         }
     }
-    let imagen = document.createElement('div');
-    imagen.innerHTML = '<img src="'+types[type][id].imagen+'" width="25%" height="auto" alt="img">'
-    content.appendChild(imagen);
+    
+    // Set the image in its dedicated section
+    const imageContainer = document.getElementById('element-image');
+    imageContainer.innerHTML = '<img src="'+types[type][id].imagen+'" alt="'+node.nombre+'">';
+    
     setWiki(types[type][id].wiki);
 }
